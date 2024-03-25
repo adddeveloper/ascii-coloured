@@ -72,25 +72,18 @@ function ascii() {
         var blue = data[i + 2];
         var grayscale = (red + green + blue) / 3;
         var asciiIndex = Math.floor(((255 - grayscale) / 255) * (brightness.length - 1));
-        asciiArt += brightness[asciiIndex];
-        if ((i / 4 + 1) % canvas.width === 0) {
-            asciiArt += '\n';
-        }
-
         // color
-        /*
          asciiArt += '<span style="color:rgb('+red+','+green+','+blue+');">'+brightness[asciiIndex]+'</span>';
         if ((i / 4 + 1) % canvas.width === 0) {
             asciiArt += '</br>';
         }
-        */
     }
 
     // Display ASCII art
     cover.style.display = "flex";
     p.textContent = asciiArt;
     // color
-    // p.innerHTML = asciiArt;
+    p.innerHTML = asciiArt;
 }
 
 
